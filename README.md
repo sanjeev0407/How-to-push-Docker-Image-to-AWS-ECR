@@ -170,6 +170,7 @@ aws-cli/1.18.97 Python/2.7.18rc1 Linux/5.4.0-1015-aws botocore/1.17.20
 <em>~# aws configure<em>
 
 # Step-4: Creating ECR Repository in AWS
+
 1. Login to AWS console
 2. Find the AWS Elastic Container Registry Service as shown below and Click on Elastic Container Registry
 3. Click on Create repository
@@ -182,16 +183,20 @@ Make sure that you have the latest version of the AWS CLI and Docker installed. 
 8. Use the following steps to authenticate and push an image to your repository. For additional registry authentication methods, including the Amazon ECR credential helper, see Registry Authentication .
    <br>i) Retrieve an authentication token and authenticate your Docker client to your registry.</br>
  <br>Use the AWS CLI: </br>
+
 9. <br><em>~$ aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin AccountID.dkr.ecr.us-east-1.amazonaws.com</em> </br>
 
  <br>*Note*: If you receive an error using the AWS CLI, make sure that you have the latest version of the AWS CLI and Docker installed.
 Build your Docker image using the following command. For information on building a Docker file from scratch see the instructions here . You can skip this step if your image is already built:
+
 10. <em>~$ docker build -t nodejsdocker .</em> <br>
 
  <br>After the build completes, tag your image so you can push the image to this repository: <br>
+
 11.<br><em>~$ docker tag nodejsdocker:latest AccountID.dkr.ecr.us-east-1.amazonaws.com/nodejsdocker:latest</em> <br>
 
  <br>Run the following command to push this image to your newly created AWS repository: <br>
+
 12. <br><em>~$ docker push AccountID.dkr.ecr.us-east-1.amazonaws.com/nodejsdocker:latest</em> <br>
 
 # Step-5: How to push Docker-image to DockerHub
