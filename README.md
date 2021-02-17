@@ -1,6 +1,8 @@
 ## How-to-push-Docker-Image-to-AWS-ECR
 #Prerequisites
+
 Ubuntu 16/18/20.04 LTS
+
 SSH access with sudo privileges
 
 ## step -1: Creating Node.js Application
